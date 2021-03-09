@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 
 # Make Instance Ready for Remote Desktop or RDP
 
@@ -34,7 +34,7 @@ if sudo useradd -m user &> /dev/null
 then
   printf "\ruser created $endc$enda\n" >&2
 else
-  printf "\r$r$b Error Occured $endc$enda\n" >&2
+  printf "\r$r$b Error Her Occured $endc$enda\n" >&2
   exit
 fi
 
@@ -103,7 +103,7 @@ printf "$g$b    Installing VirtualBox $endc$enda" >&2
     sudo apt install --assume-yes --fix-broken
 } &> /dev/null &&
 printf "\r$c$b    Virtualbox Installed $endc$enda\n" >&2 ||
-printf "\r$r$b    Error Occured $endc$enda\n" >&2
+printf "\r$r$b    Error Occured Virtual box $endc$enda\n" >&2
 
 
 
