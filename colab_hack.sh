@@ -95,6 +95,18 @@ printf "\r$r$b    Error Occured $endc$enda\n" >&2
 
 
 
+# Install Virtualbox
+printf "$g$b    Installing VirtualBox $endc$enda" >&2
+{
+    wget https://download.virtualbox.org/virtualbox/6.1.18/virtualbox-6.1_6.1.18-142142~Debian~stretch_amd64.deb
+    sudo dpkg --install virtualbox-6.1_6.1.18-142142~Debian~stretch_amd64.deb
+    sudo apt install --assume-yes --fix-broken
+} &> /dev/null &&
+printf "\r$c$b    Virtualbox Installed $endc$enda\n" >&2 ||
+printf "\r$r$b    Error Occured $endc$enda\n" >&2
+
+
+
 # Install CrossOver (Run exe on linux)
 printf "$g$b    Installing CrossOver $endc$enda" >&2
 {
