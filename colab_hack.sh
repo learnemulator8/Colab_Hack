@@ -1,4 +1,4 @@
-#!/bin/bash
+#! /bin/bash
 
 # Make Instance Ready for Remote Desktop or RDP
 
@@ -20,7 +20,8 @@ printf """$c$b
     | |    / _ \| |/ _\` | '_ \    |  __  |/ _\` |/ __| |/ / __|
     | |___| (_) | | (_| | |_) |   | |  | | (_| | (__|   <\__ \\
      \_____\___/|_|\__,_|_.__/    |_|  |_|\__,_|\___|_|\_\___/ 
-    $r  Shaitan         
+    $r  By Shaitan © 2020 $c Edited by Shaitan (v5 fix terminal issue)
+      Github : Shaitan-hacks         
 $endc$enda""";
 
 
@@ -33,7 +34,7 @@ if sudo useradd -m user &> /dev/null
 then
   printf "\ruser created $endc$enda\n" >&2
 else
-  printf "\r$r$b Error Her Occured $endc$enda\n" >&2
+  printf "\r$r$b Error Occured $endc$enda\n" >&2
   exit
 fi
 
@@ -72,8 +73,9 @@ printf "\r$c$b    Chrome Remote Desktop Installed $endc$enda\n" >&2 ||
 printf "$g$b    Installing Desktop Environment $endc$enda" >&2
 {
     sudo DEBIAN_FRONTEND=noninteractive \
-        apt install --assume-yes xfce4 desktop-base
-    sudo bash -c 'echo "exec /etc/X11/Xsession /usr/bin/xfce4-session" > /etc/chrome-remote-desktop-session'  
+        apt install --assume-yes xfce4 desktop-base xfce4-terminal
+    sudo bash -c 'echo "exec /etc/X11/Xsession /usr/bin/xfce4-session" > /etc/chrome-remote-desktop-session'
+    sudo apt remove --assume-yes gnome-terminal  
     sudo apt install --assume-yes xscreensaver
     sudo systemctl disable lightdm.service
 } &> /dev/null &&
@@ -94,23 +96,11 @@ printf "\r$r$b    Error Occured $endc$enda\n" >&2
 
 
 
-# Install Virtualbox
-printf "$g$b    Installing VirtualBox $endc$enda" >&2
-{
-    wget https://download.virtualbox.org/virtualbox/6.1.18/virtualbox-6.1_6.1.18-142142~Debian~stretch_amd64.deb
-    sudo dpkg --install virtualbox-6.1_6.1.18-142142~Debian~stretch_amd64.deb
-    sudo apt install --assume-yes --fix-broken
-} &> /dev/null &&
-printf "\r$c$b    Virtualbox Installed $endc$enda\n" >&2 ||
-printf "\r$r$b    Error Occured Virtual box $endc$enda\n" >&2
-
-
-
 # Install CrossOver (Run exe on linux)
 printf "$g$b    Installing CrossOver $endc$enda" >&2
 {
-    wget https://media.codeweavers.com/pub/crossover/cxlinux/demo/crossover_20.0.2-1.deb
-    sudo dpkg -i crossover_20.0.2-1.deb
+    wget https://media.codeweavers.com/pub/crossover/cxlinux/demo/crossover_20.0.4-1.deb
+    sudo dpkg -i crossover_20.0.4-1.deb
     sudo apt install --assume-yes --fix-broken
 } &> /dev/null &&
 printf "\r$c$b    CrossOver Installed $endc$enda\n" >&2 ||
