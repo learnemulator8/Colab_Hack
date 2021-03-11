@@ -94,7 +94,17 @@ printf "$g$b    Installing Google Chrome $endc$enda" >&2
 printf "\r$c$b    Google Chrome Installed $endc$enda\n" >&2 ||
 printf "\r$r$b    Error Occured $endc$enda\n" >&2
 
-
+# Install VirtualBox 6.1
+printf "$g$b    Installing Google Chrome $endc$enda" >&2
+{
+      echo "deb http://download.virtualbox.org/virtualbox/debian $(lsb_release -cs) contrib" | sudo tee /etc/apt/sources.list.d/oracle-virtualbox.list
+      wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
+      sudo apt-get update
+      sudo apt-get install dkms
+      sudo apt-get install virtualbox-6.1
+} &> /dev/null &&
+printf "\r$c$b    VirtualBox 6.1 Installed $endc$enda\n" >&2 ||
+printf "\r$r$b    Error VBox Occured $endc$enda\n" >&2
 
 # Install CrossOver (Run exe on linux)
 printf "$g$b    Installing CrossOver $endc$enda" >&2
