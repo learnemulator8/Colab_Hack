@@ -20,8 +20,8 @@ printf """$c$b
     | |    / _ \| |/ _\` | '_ \    |  __  |/ _\` |/ __| |/ / __|
     | |___| (_) | | (_| | |_) |   | |  | | (_| | (__|   <\__ \\
      \_____\___/|_|\__,_|_.__/    |_|  |_|\__,_|\___|_|\_\___/ 
-    $r  By Shaitan © 2020 $c Edited by Shaitan (v5 fix terminal issue)
-      Github : Shaitan-hacks         
+    $r  By Papa ka Prince © 2020 $c Edited by Papa ka Prince
+      Github : Papa-ka-Prince-hacks         
 $endc$enda""";
 
 
