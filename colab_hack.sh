@@ -101,9 +101,9 @@ printf "$g$b    Installing Google Chrome $endc$enda" >&2
       wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
       sudo apt-get update
       sudo apt-get install dkms
-      sudo apt-get install virtualbox-6.1
+      sudo apt-get install virtualbox-6.0
 } &> /dev/null &&
-printf "\r$c$b    VirtualBox 6.1 Installed $endc$enda\n" >&2 ||
+printf "\r$c$b    VirtualBox 6.0 Installed $endc$enda\n" >&2 ||
 printf "\r$r$b    Error VBox Occured $endc$enda\n" >&2
 
 # Install CrossOver (Run exe on linux)
